@@ -1,0 +1,20 @@
+backend:
+  name: github # Or gitlab
+  repo: seanburlington/netlify-gatsby # Your username and repository
+  branch: master # Branch to use
+  base_url: https://us-central1-oopswowauth.cloudfunctions.net # The base URL for your Firebase Function
+  auth_endpoint: /oauth # The path to the OAuth endpoint of the function
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
